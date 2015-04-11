@@ -6,12 +6,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.LayoutInflater;
+import android.graphics.Color; import android.graphics.Paint; import android.os.Bundle; import android.view.GestureDetector; import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
@@ -35,9 +32,8 @@ import java.util.List;
 /**
  * Activity for collecting images of calibration targets. The user must first specify the type of target it is
  * searching for and click the screen to add the image.
- *
- * @author Peter Abeles
- */
+ **/
+
 public class CalibrationActivity extends PointTrackerDisplayActivity
 {
 	public static final int TARGET_DIALOG = 10;
@@ -46,7 +42,8 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 	public static int numRows = 5;
 	public static int numCols = 7;
 
-        public int refreshFrames = 0;
+    Bitmap nickCage;
+    Bitmap newCage;
 
 	Paint paintPoint = new Paint();
 	Paint paintFailed = new Paint();
@@ -107,6 +104,8 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				return true;
 			}});
 
+        nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
+        newCage = Bitmap.createScaledBitmap(nickCage,100,100,false);
 		//showDialog(TARGET_DIALOG);
 	}
 
@@ -294,7 +293,9 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 					List<Point2D_F64> found = detector.getPoints();
 					for( Point2D_F64 p : found )
 						pointsGui.grow().set(p);
-				} else if( showDetectDebug ) {
+				}
+
+                /*else if( showDetectDebug ) {
 					// show binary image to aid in debugging and detected rectangles
 					if( detector instanceof WrapPlanarChessTarget ) {
 						DetectChessCalibrationPoints alg = ((WrapPlanarChessTarget) detector).getAlg();
@@ -304,7 +305,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 						VisualizeImageData.binaryToBitmap(((WrapPlanarSquareGridTarget) detector).getBinary(), bitmap, storage);
 						extractQuads(((WrapPlanarSquareGridTarget) detector).getDetect());
 					}
-				}
+				}*/
 			}
 		}
 
@@ -399,7 +400,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				canvas.drawBitmap(bitmap,0,0,null);
 
 				// draw shapes for debugging purposes
-				for( List<Point2D_I32> l : debugQuads ) {
+				/*for( List<Point2D_I32> l : debugQuads ) {
 					for( int i = 1; i < l.size(); i++ ) {
 						Point2D_I32 c0 = l.get(i-1);
 						Point2D_I32 c1 = l.get(i);
@@ -408,13 +409,16 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 					Point2D_I32 c0 = l.get(0);
 					Point2D_I32 c1 = l.get(l.size()-1);
 					canvas.drawLine(c0.x,c0.y,c1.x,c1.y,paintFailed);
-				}
+				}*/
 
 				// draw detected calibration points
 				for( int i = 0; i < pointsGui.size(); i++ ) {
 					Point2D_F64 p = pointsGui.get(i);
 					canvas.drawCircle((float)p.x,(float)p.y,3,paintPoint);
 				}
+
+                if (pointsGui.size() > 0) canvas.drawBitmap(newCage,(float) pointsGui.get(0).x ,(float) pointsGui.get(0).y, null);
+
 			}
 		}
 	}
