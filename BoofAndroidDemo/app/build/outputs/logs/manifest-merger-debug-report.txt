@@ -1,0 +1,261 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:5:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:4:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+uses-sdk
+ADDED from AndroidManifest.xml:6:2
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:6:39
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:6:12
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.CAMERA
+ADDED from AndroidManifest.xml:8:2
+	android:name
+		ADDED from AndroidManifest.xml:8:19
+uses-feature#android.hardware.camera
+ADDED from AndroidManifest.xml:9:2
+	android:required
+		ADDED from AndroidManifest.xml:9:55
+	android:name
+		ADDED from AndroidManifest.xml:9:16
+uses-feature#android.hardware.camera.autofocus
+ADDED from AndroidManifest.xml:10:2
+	android:required
+		ADDED from AndroidManifest.xml:10:65
+	android:name
+		ADDED from AndroidManifest.xml:10:16
+supports-screens
+ADDED from AndroidManifest.xml:12:2
+	android:largeScreens
+		ADDED from AndroidManifest.xml:15:4
+	android:smallScreens
+		ADDED from AndroidManifest.xml:17:4
+	android:normalScreens
+		ADDED from AndroidManifest.xml:16:4
+	android:xlargeScreens
+		ADDED from AndroidManifest.xml:14:4
+	android:anyDensity
+		ADDED from AndroidManifest.xml:13:4
+application
+ADDED from AndroidManifest.xml:19:2
+	android:label
+		ADDED from AndroidManifest.xml:19:15
+	android:icon
+		ADDED from AndroidManifest.xml:19:48
+activity#org.boofcv.android.DemoMain
+ADDED from AndroidManifest.xml:20:3
+	android:label
+		ADDED from AndroidManifest.xml:21:7
+	android:name
+		ADDED from AndroidManifest.xml:20:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:22:4
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:23:5
+	android:name
+		ADDED from AndroidManifest.xml:23:13
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:24:5
+	android:name
+		ADDED from AndroidManifest.xml:24:15
+activity#org.boofcv.android.DemoVideoDisplayActivity
+ADDED from AndroidManifest.xml:27:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:27:54
+	android:name
+		ADDED from AndroidManifest.xml:27:13
+activity#org.boofcv.android.PreferenceActivity
+ADDED from AndroidManifest.xml:28:3
+	android:name
+		ADDED from AndroidManifest.xml:28:13
+activity#org.boofcv.android.BlurDisplayActivity
+ADDED from AndroidManifest.xml:29:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:29:49
+	android:name
+		ADDED from AndroidManifest.xml:29:13
+activity#org.boofcv.android.EnhanceDisplayActivity
+ADDED from AndroidManifest.xml:30:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:30:52
+	android:name
+		ADDED from AndroidManifest.xml:30:13
+activity#org.boofcv.android.GradientDisplayActivity
+ADDED from AndroidManifest.xml:31:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:31:53
+	android:name
+		ADDED from AndroidManifest.xml:31:13
+activity#org.boofcv.android.BinaryDisplayActivity
+ADDED from AndroidManifest.xml:32:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:32:51
+	android:name
+		ADDED from AndroidManifest.xml:32:13
+activity#org.boofcv.android.PointDisplayActivity
+ADDED from AndroidManifest.xml:33:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:33:50
+	android:name
+		ADDED from AndroidManifest.xml:33:13
+activity#org.boofcv.android.ScalePointDisplayActivity
+ADDED from AndroidManifest.xml:34:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:34:55
+	android:name
+		ADDED from AndroidManifest.xml:34:13
+activity#org.boofcv.android.LineDisplayActivity
+ADDED from AndroidManifest.xml:35:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:35:49
+	android:name
+		ADDED from AndroidManifest.xml:35:13
+activity#org.boofcv.android.KltDisplayActivity
+ADDED from AndroidManifest.xml:36:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:36:48
+	android:name
+		ADDED from AndroidManifest.xml:36:13
+activity#org.boofcv.android.StabilizeDisplayActivity
+ADDED from AndroidManifest.xml:37:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:37:54
+	android:name
+		ADDED from AndroidManifest.xml:37:13
+activity#org.boofcv.android.MosaicDisplayActivity
+ADDED from AndroidManifest.xml:38:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:38:51
+	android:name
+		ADDED from AndroidManifest.xml:38:13
+activity#org.boofcv.android.AssociationActivity
+ADDED from AndroidManifest.xml:39:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:39:49
+	android:name
+		ADDED from AndroidManifest.xml:39:13
+activity#org.boofcv.android.DdaTrackerDisplayActivity
+ADDED from AndroidManifest.xml:40:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:40:55
+	android:name
+		ADDED from AndroidManifest.xml:40:13
+activity#org.boofcv.android.CombinedTrackerDisplayActivity
+ADDED from AndroidManifest.xml:41:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:41:60
+	android:name
+		ADDED from AndroidManifest.xml:41:13
+activity#org.boofcv.android.CalibrationActivity
+ADDED from AndroidManifest.xml:42:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:42:49
+	android:name
+		ADDED from AndroidManifest.xml:42:13
+activity#org.boofcv.android.CalibrationComputeActivity
+ADDED from AndroidManifest.xml:43:3
+	android:configChanges
+		ADDED from AndroidManifest.xml:44:7
+	android:name
+		ADDED from AndroidManifest.xml:43:13
+activity#org.boofcv.android.CameraInformationActivity
+ADDED from AndroidManifest.xml:45:3
+	android:name
+		ADDED from AndroidManifest.xml:45:13
+activity#org.boofcv.android.DisparityActivity
+ADDED from AndroidManifest.xml:46:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:46:47
+	android:name
+		ADDED from AndroidManifest.xml:46:13
+activity#org.boofcv.android.AboutActivity
+ADDED from AndroidManifest.xml:47:3
+	android:name
+		ADDED from AndroidManifest.xml:47:13
+activity#org.boofcv.android.CalibrationHelpActivity
+ADDED from AndroidManifest.xml:48:3
+	android:name
+		ADDED from AndroidManifest.xml:48:13
+activity#org.boofcv.android.ShapeFitDisplayActivity
+ADDED from AndroidManifest.xml:49:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:49:53
+	android:name
+		ADDED from AndroidManifest.xml:49:13
+activity#org.boofcv.android.ImageTransformActivity
+ADDED from AndroidManifest.xml:50:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:50:58
+	android:name
+		ADDED from AndroidManifest.xml:50:19
+activity#org.boofcv.android.ObjectTrackerActivity
+ADDED from AndroidManifest.xml:51:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:51:51
+	android:name
+		ADDED from AndroidManifest.xml:51:13
+activity#org.boofcv.android.ShapeFittingActivity
+ADDED from AndroidManifest.xml:52:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:52:50
+	android:name
+		ADDED from AndroidManifest.xml:52:13
+activity#org.boofcv.android.CannyEdgeActivity
+ADDED from AndroidManifest.xml:53:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:53:47
+	android:name
+		ADDED from AndroidManifest.xml:53:13
+activity#org.boofcv.android.UndistortDisplayActivity
+ADDED from AndroidManifest.xml:54:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:54:54
+	android:name
+		ADDED from AndroidManifest.xml:54:13
+activity#org.boofcv.android.SegmentationDisplayActivity
+ADDED from AndroidManifest.xml:55:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:55:57
+	android:name
+		ADDED from AndroidManifest.xml:55:13
+activity#org.boofcv.android.ThresholdDisplayActivity
+ADDED from AndroidManifest.xml:56:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:56:54
+	android:name
+		ADDED from AndroidManifest.xml:56:13
+activity#org.boofcv.android.FiducialSquareBinaryActivity
+ADDED from AndroidManifest.xml:57:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:57:58
+	android:name
+		ADDED from AndroidManifest.xml:57:13
+activity#org.boofcv.android.FiducialSquareBinaryHelpActivity
+ADDED from AndroidManifest.xml:58:3
+	android:name
+		ADDED from AndroidManifest.xml:58:13
+activity#org.boofcv.android.FiducialSquareImageActivity
+ADDED from AndroidManifest.xml:59:3
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:59:57
+	android:name
+		ADDED from AndroidManifest.xml:59:13
+activity#org.boofcv.android.FiducialSquareImageHelpActivity
+ADDED from AndroidManifest.xml:60:3
+	android:name
+		ADDED from AndroidManifest.xml:60:13

@@ -1,0 +1,69 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea/
+* .idea/.name
+* .idea/ant.xml
+* .idea/codeStyleSettings.xml
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/encodings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/scopes/
+* .idea/scopes/scope_settings.xml
+* .idea/uiDesigner.xml
+* .idea/vcs.xml
+* .idea/workspace.xml
+* BoofAndroidDemo.iml
+* ant.properties
+* build.xml
+* change.txt
+* proguard-project.txt
+* readme.txt
+* todo.txt
+* various/
+* various/android_full.xcf
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* libs/BoofCV-android-0.18.jar => app/libs/BoofCV-android-0.18.jar
+* libs/BoofCV-calibration-0.18.jar => app/libs/BoofCV-calibration-0.18.jar
+* libs/BoofCV-feature-0.18.jar => app/libs/BoofCV-feature-0.18.jar
+* libs/BoofCV-geo-0.18.jar => app/libs/BoofCV-geo-0.18.jar
+* libs/BoofCV-io-0.18.jar => app/libs/BoofCV-io-0.18.jar
+* libs/BoofCV-ip-0.18.jar => app/libs/BoofCV-ip-0.18.jar
+* libs/BoofCV-recognition-0.18.jar => app/libs/BoofCV-recognition-0.18.jar
+* libs/BoofCV-sfm-0.18.jar => app/libs/BoofCV-sfm-0.18.jar
+* libs/core-0.26.jar => app/libs/core-0.26.jar
+* libs/ddogleg-0.6.jar => app/libs/ddogleg-0.6.jar
+* libs/georegression-0.7.jar => app/libs/georegression-0.7.jar
+* libs/xstream-1.4.7.jar => app/libs/xstream-1.4.7.jar
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

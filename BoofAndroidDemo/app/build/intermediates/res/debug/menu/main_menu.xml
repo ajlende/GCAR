@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/preferences"
+		  android:title="Preferences"
+		  android:showAsAction="ifRoom" />
+	<item android:id="@+id/info"
+		  android:title="Info"
+		  android:showAsAction="ifRoom" />
+	<item android:id="@+id/about"
+		  android:title="About"
+		  android:showAsAction="ifRoom"/>
+</menu><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/menu/main_menu.xml -->

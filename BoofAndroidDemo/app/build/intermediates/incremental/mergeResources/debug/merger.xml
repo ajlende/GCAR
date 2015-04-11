@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res"><file name="border" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable/border.xml" qualifiers="" type="drawable"/><file name="fiducial_square_binary" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable/fiducial_square_binary.png" qualifiers="" type="drawable"/><file name="dog" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable/dog.png" qualifiers="" type="drawable"/><file name="fiducial_square_image" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable/fiducial_square_image.png" qualifiers="" type="drawable"/><file path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/values/strings.xml" qualifiers=""><string-array name="disparity_views">
+		<item>Association</item>
+		<item>Rectification</item>
+		<item>Disparity</item>
+	</string-array><string-array name="line_features">
+		<item>Hough Foot</item>
+		<item>Hough Polar</item>
+	</string-array><string-array name="fiducials">
+		<item>Square Binary</item>
+		<item>Square Image</item>
+		<item>Chessboard</item>
+		<item>Square Grid</item>
+	</string-array><string name="app_name">BoofDemo</string><string-array name="gradients">
+		<item>Three</item>
+		<item>Sobel</item>
+		<item>Prewitt</item>
+	</string-array><string-array name="shapes">
+		<item>Ellipse</item>
+		<item>Polygon</item>
+	</string-array><string-array name="segmentation_algs">
+		<item>Watershed</item>
+		<item>Felzenszwalb-Huttenloche</item>
+		<item>SLIC</item>
+		<item>Mean-Shift</item>
+	</string-array><string-array name="scale_features">
+		<item>SURF</item>
+		<item>SIFT</item>
+	</string-array><string-array name="disparity_algs">
+		<item>Rect</item>
+		<item>5-Rect</item>
+	</string-array><string-array name="point_features">
+		<item>Shi-Tomasi</item>
+		<item>Harris</item>
+		<item>FAST</item>
+		<item>Laplacian</item>
+		<item>KitRos</item>
+		<item>Hessian Det</item>
+		<item>Hessian Trace</item>
+	</string-array><string-array name="blurs">
+		<item>Mean</item>
+		<item>Gaussian</item>
+		<item>Median</item>
+	</string-array><string-array name="thresholding">
+		<item>Global: Otsu</item>
+		<item>Global: Entropy</item>
+		<item>Adaptive: Square</item>
+		<item>Adaptive: Gaussian</item>
+		<item>Adaptive: Sauvola</item>
+	</string-array><string-array name="enhance">
+		<item>Histogram Global</item>
+		<item>Histogram Local</item>
+		<item>Sharpen-4</item>
+		<item>Sharpen-8</item>
+		<item>None</item>
+	</string-array><string-array name="tracking_objects">
+		<item>Circulant</item>
+		<item>Mean-Shift</item>
+		<item>Mean-Shift Scale</item>
+		<item>Mean-Shift Likelihood</item>
+		<item>Sparse Flow</item>
+		<item>TLD</item>
+	</string-array><string-array name="transforms">
+		<item>DFT</item>
+		<item>Pyramid</item>
+		<item>Wavelet</item>
+	</string-array><string-array name="detectors">
+		<item>Fast-Hessian</item>
+		<item>SIFT</item>
+		<item>Shi-Tomasi</item>
+		<item>Harris</item>
+		<item>FAST</item>
+	</string-array><string-array name="binary_filters">
+		<item>None</item>
+		<item>Dilate-4</item>
+		<item>Dilate-8</item>
+		<item>Erode-4</item>
+		<item>Erode-8</item>
+		<item>Edge-4</item>
+		<item>Edge-8</item>
+		<item>Denoise</item>
+	</string-array><string-array name="descriptors">
+		<item>SURF</item>
+		<item>SIFT</item>
+		<item>BRIEF</item>
+		<item>NCC</item>
+	</string-array></file><file name="main_menu" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/menu/main_menu.xml" qualifiers="" type="menu"/><file name="disparity_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/disparity_controls.xml" qualifiers="" type="layout"/><file name="calibration_help" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_help.xml" qualifiers="" type="layout"/><file name="detect_point_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/detect_point_controls.xml" qualifiers="" type="layout"/><file name="preference_activity" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/preference_activity.xml" qualifiers="" type="layout"/><file name="child_row" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/child_row.xml" qualifiers="" type="layout"/><file name="mosaic_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/mosaic_controls.xml" qualifiers="" type="layout"/><file name="calibration_compute_view" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_compute_view.xml" qualifiers="" type="layout"/><file name="camera_info_activity" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/camera_info_activity.xml" qualifiers="" type="layout"/><file name="undistort_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/undistort_controls.xml" qualifiers="" type="layout"/><file name="calibration_view" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_view.xml" qualifiers="" type="layout"/><file name="about" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/about.xml" qualifiers="" type="layout"/><file name="fiducial_help" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/fiducial_help.xml" qualifiers="" type="layout"/><file name="info_view" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/info_view.xml" qualifiers="" type="layout"/><file name="canny_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/canny_controls.xml" qualifiers="" type="layout"/><file name="detect_line_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/detect_line_controls.xml" qualifiers="" type="layout"/><file name="gradient_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/gradient_controls.xml" qualifiers="" type="layout"/><file name="enhance_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/enhance_controls.xml" qualifiers="" type="layout"/><file name="group_row" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/group_row.xml" qualifiers="" type="layout"/><file name="main" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/main.xml" qualifiers="" type="layout"/><file name="thresholding_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/thresholding_controls.xml" qualifiers="" type="layout"/><file name="associate_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/associate_controls.xml" qualifiers="" type="layout"/><file name="objecttrack_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/objecttrack_controls.xml" qualifiers="" type="layout"/><file name="fiducial_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/fiducial_controls.xml" qualifiers="" type="layout"/><file name="binary_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/binary_controls.xml" qualifiers="" type="layout"/><file name="calibration_configure" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_configure.xml" qualifiers="" type="layout"/><file name="stabilization_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/stabilization_controls.xml" qualifiers="" type="layout"/><file name="select_algorithm" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/select_algorithm.xml" qualifiers="" type="layout"/><file name="combined_tracker_controls" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/combined_tracker_controls.xml" qualifiers="" type="layout"/><file name="ic_launcher" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable-xhdpi/ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable-ldpi/ic_launcher.png" qualifiers="ldpi-v4" type="drawable"/><file name="ic_launcher" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable-hdpi/ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/drawable-mdpi/ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/></source><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/generated/res/rs/debug"/><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/generated/res/generated/debug"/></dataSet><dataSet config="debug"><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/debug/res"/></dataSet><mergedItems/></merger>
