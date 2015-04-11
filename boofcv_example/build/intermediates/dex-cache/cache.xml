@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/xstream-1.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="488e9e4a47afc81d2b2dec3c3eb3a4d0f10fe105">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/xstream-1.4.4-4e8dbe49ac0fee66ae5816ac03d6807387d2e27b.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/BoofCVAndroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="905cea2cae92753c9c0ec5efe6759dec1f0eb6ff">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/BoofCVAndroid-d2d606e57e71c207697a68aa620d7016afc2ba89.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/EJML.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1d97fc9e208917e334b929ace207a14e34eee4e8">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/EJML-0a616605931e265127326c732652956bf84e1551.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/DDogleg.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f139d022706efa32a65aa88c5527f6b89a1abedc">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/DDogleg-2139eccbca69d4288bf3c8b41d1cc486136841e1.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/GeoRegression.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3eb401cea1097afe355e58804a7049e817bfa1af">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/GeoRegression-dea6b6bcfaa0d4aa782a0816bbab3c73b9035b4d.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/BoofCV.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4a66d6c2a03cafb455a23c08dd95510d5f801488">
+        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/BoofCV-7a0e7ca2887087d88b375d6bcfefa0cf8c80eff9.jar" />
+    </item>
+
+</items>

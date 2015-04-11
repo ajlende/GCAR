@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "org.boofcv.example.android"
+        minSdkVersion 10
+        targetSdkVersion 17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/BoofCV.jar')
+    compile files('libs/BoofCVAndroid.jar')
+    compile files('libs/DDogleg.jar')
+    compile files('libs/EJML.jar')
+    compile files('libs/GeoRegression.jar')
+    compile files('libs/xstream-1.4.4.jar')
+}
