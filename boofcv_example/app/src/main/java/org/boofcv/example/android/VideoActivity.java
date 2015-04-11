@@ -27,17 +27,24 @@ import android.graphics.Canvas;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
+import boofcv.factory.tracker.FactoryTrackerObjectQuad;
 import android.view.SurfaceView;
 import android.view.Window;
 import android.widget.FrameLayout;
 import boofcv.abst.filter.derivative.ImageGradient;
+import boofcv.abst.tracker.TrackerObjectQuad;
 import boofcv.alg.misc.GImageMiscOps;
 import boofcv.android.ConvertBitmap;
 import boofcv.android.ConvertNV21;
 import boofcv.android.VisualizeImageData;
 import boofcv.factory.filter.derivative.FactoryDerivative;
+import boofcv.io.MediaManager;
+import boofcv.io.wrapper.DefaultMediaManager;
+import boofcv.struct.image.ImageBase;
 import boofcv.struct.image.ImageSInt16;
 import boofcv.struct.image.ImageUInt8;
+import georegression.struct.shapes.Quadrilateral_F64;
+import com.google.vrtoolkit.cardboard.*;
 
 import java.util.List;
 
@@ -56,6 +63,11 @@ public class VideoActivity extends Activity implements Camera.PreviewCallback {
 	private Camera mCamera;
 	private Visualization mDraw;
 	private CameraPreview mPreview;
+
+    private TrackerObjectQuad tracker;
+    private Quadrilateral_F64 location;
+
+    boolean firstFrame;
 
 	// computes the image gradient
 	private ImageGradient<ImageUInt8,ImageSInt16> gradient = FactoryDerivative.three(ImageUInt8.class, ImageSInt16.class);
@@ -147,7 +159,13 @@ public class VideoActivity extends Activity implements Camera.PreviewCallback {
 		output = Bitmap.createBitmap(s.width,s.height,Bitmap.Config.ARGB_8888 );
 		storage = ConvertBitmap.declareStorage(output, storage);
 
-		// start image processing thread
+        firstFrame = true;
+
+        tracker = FactoryTrackerObjectQuad.circulant(null, ImageUInt8.class);
+        location = new Quadrilateral_F64(276,159,362,163,358,292,273,289);
+
+
+        // start image processing thread
 		thread = new ThreadProcess();
 		thread.start();
 
@@ -323,17 +341,22 @@ public class VideoActivity extends Activity implements Camera.PreviewCallback {
 					ImageUInt8 tmp = gray1;
 					gray1 = gray2;
 					gray2 = tmp;
+                    if(firstFrame) {
+                        tracker.initialize(gray2, location);
+                        firstFrame = false;
+                    }
 				}
 
 				if( flipHorizontal )
 					GImageMiscOps.flipHorizontal(gray2);
 
-				// process the image and compute its gradient
-				gradient.process(gray2,derivX,derivY);
+				// process the image and track the object
+                tracker.process(gray2,location);
 
 				// render the output in a synthetic color image
 				synchronized ( lockOutput ) {
-					VisualizeImageData.colorizeGradient(derivX,derivY,-1,output,storage);
+                    VisualizeImageData.binaryToBitmap(gray2,output, storage);
+					//VisualizeImageData.colorizeGradient(derivX,derivY,-1,output,storage);
 				}
 				mDraw.postInvalidate();
 			}

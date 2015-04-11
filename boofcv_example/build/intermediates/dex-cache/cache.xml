@@ -2,46 +2,74 @@
 <items version="2" >
 
     <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/xstream-1.4.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="488e9e4a47afc81d2b2dec3c3eb3a4d0f10fe105">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/xstream-1.4.4-4e8dbe49ac0fee66ae5816ac03d6807387d2e27b.jar" />
-    </item>
-    <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/BoofCVAndroid.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="905cea2cae92753c9c0ec5efe6759dec1f0eb6ff">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/BoofCVAndroid-d2d606e57e71c207697a68aa620d7016afc2ba89.jar" />
-    </item>
-    <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/EJML.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1d97fc9e208917e334b929ace207a14e34eee4e8">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/EJML-0a616605931e265127326c732652956bf84e1551.jar" />
-    </item>
-    <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/DDogleg.jar"
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\DDogleg.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="f139d022706efa32a65aa88c5527f6b89a1abedc">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/DDogleg-2139eccbca69d4288bf3c8b41d1cc486136841e1.jar" />
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\DDogleg-ea35a2b844424afc510ccecd5c061f1fd24600fe.jar" />
     </item>
     <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/GeoRegression.jar"
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\core-0.26.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="3eb401cea1097afe355e58804a7049e817bfa1af">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/GeoRegression-dea6b6bcfaa0d4aa782a0816bbab3c73b9035b4d.jar" />
+        sha1="2df89c44ad92900f025a61e228bbbcd6abca3efd">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\core-0.26-fa2150941f4756ef80a1dc0ab2841901cd29c5bb.jar" />
     </item>
     <item
-        jar="/home/nmont/Documents/Speed Dating/boofcv_example/app/libs/BoofCV.jar"
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\xstream-1.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="488e9e4a47afc81d2b2dec3c3eb3a4d0f10fe105">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\xstream-1.4.4-739b654b751aeef61d3640eba53a6b66d3eb1544.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\BoofCVAndroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="905cea2cae92753c9c0ec5efe6759dec1f0eb6ff">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\BoofCVAndroid-3e389a967767a6af106a54bcda468f2f67fef020.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\EJML.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1d97fc9e208917e334b929ace207a14e34eee4e8">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\EJML-29f7011846dcc80ac9078a0e296b78a9c9b9ff8c.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\GeoRegression-georegression-0.7.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="40f6c07c6299e19de1ad36827df2fa58417f9e35">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\GeoRegression-georegression-0.7-539b6b36717a17aeacf29758712924b763a39ae5.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\ddogleg-0.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="81cb8522ea1c4f594e5e1804f75351555a892629">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\ddogleg-0.6-d17bfb0d36d8cfd2f23ea4f7a6a4cf642f0005ff.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\cardboard.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9b31afa1cc6f509d0386a5281d11872dc079f950">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\cardboard-f3536753e7b7ab0e9c5497b443692908e85e47e0.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\BoofCV.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4a66d6c2a03cafb455a23c08dd95510d5f801488">
-        <dex dex="/home/nmont/Documents/Speed Dating/boofcv_example/app/build/intermediates/pre-dexed/debug/BoofCV-7a0e7ca2887087d88b375d6bcfefa0cf8c80eff9.jar" />
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\BoofCV-9802a1c3222093387fe1c600df6d5fe2c2f5f7b6.jar" />
+    </item>
+    <item
+        jar="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\libs\libprotobuf-java-2.3-nano.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c4d70e4409fdf6dc367b7db105751ab73bec766a">
+        <dex dex="C:\Users\bww1\Documents\wethoughtthiswasaspeeddatingapp\wethoughtthiswasaspeeddatingapp.git\boofcv_example\app\build\intermediates\pre-dexed\debug\libprotobuf-java-2.3-nano-8ca217fd9cc18ec1f081a6982fc374ff706d5ec1.jar" />
     </item>
 
 </items>
