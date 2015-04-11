@@ -70,7 +70,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 	boolean processRequested = false;
 
 	// pause the display so that it doesn't change until after this time
-	long timeResume;
+	// long timeResume;
 
 	// handles gestures
 	GestureDetector mDetector;
@@ -263,7 +263,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 		@Override
 		protected void process(ImageFloat32 gray) {
 			// User requested that the most recently processed image be removed
-			if( removeRequested ) {
+			if( removeRequested || shots.size() > 100) {
 				removeRequested = false;
 				if( shots.size() > 0 )  {
 					shots.remove( shots.size()-1 );
@@ -271,8 +271,8 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				}
 			}
 
-			if( timeResume > System.currentTimeMillis() )
-				return;
+			/*if( timeResume > System.currentTimeMillis() )
+				return;*/
 
 			synchronized ( lockGui ) {
 				ConvertBitmap.grayToBitmap(gray,bitmap,storage);
@@ -356,7 +356,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 			boolean success = detector.process(gray);
 
 			// pause the display to provide feed back to the user
-			timeResume = System.currentTimeMillis()+1500;
+			// timeResume = System.currentTimeMillis()+1500;
 
 			if( success ) {
 				shots.add( new CalibrationImageInfo(gray,detector.getPoints()));
