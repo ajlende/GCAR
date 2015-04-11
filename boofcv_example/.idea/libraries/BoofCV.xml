@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="BoofCV">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/BoofCV.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
