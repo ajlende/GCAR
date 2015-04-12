@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-492e8e26dc4b38f17f17203bb772392e2aaeae4f.jar" />
+    </item>
+    <item
+        jar="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/exploded-aar/org.rajawali3d/rajawali/1.0.0-SNAPSHOT/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6c959de2204085127dd18f4389fd13a759db106b">
+        <dex dex="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/pre-dexed/debug/classes-55d877d49955b77027c2da1f18f2ae36fd9717d6.jar" />
+    </item>
+    <item
+        jar="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/pre-dexed/debug/classes-db3138eab40891fca3aabde80b84b63a6b78a6e4.jar" />
+    </item>
+    <item
+        jar="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/pre-dexed/debug/classes-231ef97edfb183954f545699c6106f806c112731.jar" />
+    </item>
+    <item
+        jar="/Users/ajlende/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/ajlende/Documents/Android/RajawaliBasicProject/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-a39f76928a4c3db680ad65860ba309fe3d12f146.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,1 @@
+Checkout Rajawali via GIT, you can run `gradle assembleRelease uploadArchives`. This will deploy to your local maven ropository. Consuming apps should have `mavenLocal()` in their repository list and add `compile 'org.rajawali3d:rajawali:1.0.0-SNAPSHOT@aar` to their dependencies.
