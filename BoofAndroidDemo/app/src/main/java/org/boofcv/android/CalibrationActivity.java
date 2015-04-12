@@ -105,7 +105,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
 		paintFailed.setColor(Color.CYAN);
 		paintFailed.setStyle(Paint.Style.FILL);
-		paintFailed.setStrokeWidth(3f);
+		paintFailed.setStrokeWidth(12f);
 	}
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -544,54 +544,72 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
                     //1st Eye
                     paintPoint.setColor(Color.RED);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)topLeft.getX()/2,(float)topLeft.getY(),3,paintPoint);
+                    canvas.drawCircle((float)topLeft.getX()/2,(float)topLeft.getY(),5,paintPoint);
 
                     paintPoint.setColor(Color.BLUE);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)topRight.getX()/2,(float)topRight.getY(),3,paintPoint);
+                    canvas.drawCircle((float)topRight.getX()/2,(float)topRight.getY(),5,paintPoint);
 
                     paintPoint.setColor(Color.GREEN);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)botLeft.getX()/2,(float)botLeft.getY(),3,paintPoint);
+                    canvas.drawCircle((float)botLeft.getX()/2,(float)botLeft.getY(),5,paintPoint);
 
                     paintPoint.setColor(Color.YELLOW);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)botRight.getX()/2,(float)botRight.getY(),3,paintPoint);
+                    canvas.drawCircle((float)botRight.getX()/2,(float)botRight.getY(),5,paintPoint);
 
                     //2nd Eye
                     paintPoint.setColor(Color.RED);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)topLeft.x/2 + half.getWidth(),(float)topLeft.y,3,paintPoint);
+                    canvas.drawCircle((float)topLeft.x/2 + half.getWidth(),(float)topLeft.y,5,paintPoint);
 
                     paintPoint.setColor(Color.BLUE);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)topRight.x/2 + half.getWidth(),(float)topRight.y,3,paintPoint);
+                    canvas.drawCircle((float)topRight.x/2 + half.getWidth(),(float)topRight.y,5,paintPoint);
 
                     paintPoint.setColor(Color.GREEN);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)botLeft.x/2 + half.getWidth(),(float)botLeft.y,3,paintPoint);
+                    canvas.drawCircle((float)botLeft.x/2 + half.getWidth(),(float)botLeft.y,5,paintPoint);
 
                     paintPoint.setColor(Color.YELLOW);
                     paintPoint.setStyle(Paint.Style.FILL);
-                    canvas.drawCircle((float)botRight.x/2 + half.getWidth(),(float)botRight.y,3,paintPoint);
+                    canvas.drawCircle((float)botRight.x/2 + half.getWidth(),(float)botRight.y,5,paintPoint);
 
 
                     double width = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY());
                     double height = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), botRight.getX(), botRight.getY());
 
                         try {
+
                             width = Math.abs(width);
                             height = Math.abs(height);
 
-                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, (int) width, (int) height, false);
+                            //Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, (int) width, (int) height, false);
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, 90, 150, false);
                             Matrix matrix = new Matrix();
                             //matrix.postRotate(degree-45);
                             Log.d("Degree", "Degree: " + degree);
                             Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
 
+
+
                             // Draw Cage
-                            canvas.drawBitmap(rotatedBitmap, (float) topRight.getX()/2, (float) topRight.getY(), null);
-                            canvas.drawBitmap(rotatedBitmap, (float) topRight.getX()/2 + half.getWidth(), (float) topRight.getY(), null);
+                            Point2D_F64 point;
+
+                            if(botLeft.getY() > topLeft.getY()) point = topRight;
+                            else point = botLeft;
+
+                            canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2, (float) point.getY(), null);
+                            canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2 + half.getWidth(), (float) point.getY(), null);
+
+                            /*
+
+                            // Left Eye Lines
+                            canvas.drawLine((float) topRight.getX()/2, (float)  topRight.getY(), (float)  topLeft.getX()/2,  (float) topLeft.getY(), paintPoint);
+                            canvas.drawLine((float) topRight.getX()/2, (float)  topRight.getY(), (float)  botRight.getX()/2,  (float) botRight.getY(), paintPoint);
+                            canvas.drawLine((float) botRight.getX()/2, (float)  botRight.getY(), (float)  botLeft.getX()/2,  (float) botLeft.getY(), paintPoint);
+                            canvas.drawLine((float) botLeft.getX()/2, (float)  botLeft.getY(), (float)  topLeft.getX()/2,  (float) topLeft.getY(), paintPoint);
+                            */
 
                             //canvas.drawRect(mostLeft, mostTop, mostRight, mostBot, paintPoint);
                             //canvas.drawBitmap(rotatedBitmap, null, rectangle, null);
