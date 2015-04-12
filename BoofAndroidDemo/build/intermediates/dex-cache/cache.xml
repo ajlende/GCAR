@@ -65,18 +65,18 @@
         <dex dex="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/intermediates/pre-dexed/debug/BoofCV-sfm-0.18-6d38c3282c92942790367a20b9c037f75605adc7.jar" />
     </item>
     <item
-        jar="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/libs/BoofCV-android-0.18.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1f09a4e8c83a03081ead69b40b4739f2dfa6f6bd">
-        <dex dex="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/intermediates/pre-dexed/debug/BoofCV-android-0.18-caf41753092c4b1d95eb3a94f6b35a0e1ebb9f32.jar" />
-    </item>
-    <item
         jar="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/libs/BoofCV-geo-0.18.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="77c9b3408a4adf617fe384c04785b1fbe5bb7719">
         <dex dex="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/intermediates/pre-dexed/debug/BoofCV-geo-0.18-fb036e5d333f322f0f5040d183f2d3eaa455437d.jar" />
+    </item>
+    <item
+        jar="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/libs/BoofCV-android-0.18.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1f09a4e8c83a03081ead69b40b4739f2dfa6f6bd">
+        <dex dex="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/build/intermediates/pre-dexed/debug/BoofCV-android-0.18-caf41753092c4b1d95eb3a94f6b35a0e1ebb9f32.jar" />
     </item>
     <item
         jar="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/libs/xstream-1.4.7.jar"

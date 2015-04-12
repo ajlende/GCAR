@@ -4,9 +4,6 @@ import android.hardware.Camera;
 
 import java.util.List;
 
-/**
- * @author Peter Abeles
- */
 public class UtilVarious {
 	/** A safe way to get an instance of the Camera object. */
 	public static Camera getCameraInstance(){

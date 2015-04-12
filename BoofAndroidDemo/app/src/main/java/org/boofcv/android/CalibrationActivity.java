@@ -71,9 +71,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 	// user has requested that the most recent image be removed from data list
 	boolean removeRequested = false;
 
-	// displays the number of calibration images captured
-	TextView textCount;
-
     // Initial found corners from Process
     Point2D_F64 C1,C2,C3,C4;
 
@@ -92,9 +89,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
 	// the user requests that the images be processed
 	boolean processRequested = true;
-
-	// pause the display so that it doesn't change until after this time
-	// long timeResume;
 
 	// handles gestures
 	GestureDetector mDetector;
@@ -116,10 +110,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
 		LinearLayout parent = getViewContent();
 		parent.addView(controls);
-
-		//textCount = (TextView)controls.findViewById(R.id.text_total);
-
-
 
 		shots = new ArrayList<CalibrationImageInfo>();
 
@@ -301,9 +291,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				}
 			}
 
-			/*if( timeResume > System.currentTimeMillis() )
-				return;*/
-
 			synchronized ( lockGui ) {
 				ConvertBitmap.grayToBitmap(gray,bitmap,storage);
 			}
@@ -483,9 +470,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
 			boolean success = detector.process(gray);
 
-			// pause the display to provide feed back to the user
-			// timeResume = System.currentTimeMillis()+1500;
-
 			if( success ) {
 				shots.add( new CalibrationImageInfo(gray,detector.getPoints()));
 				updateShotCountInUiThread();
@@ -506,15 +490,6 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 					//textCount.setText(""+size);
 				}
 			});
-		}
-
-		private boolean detectTarget(ImageFloat32 gray) {
-			if( detector.process(gray) ) {
-				return true;
-			} else {
-				showDetectDebug = true;
-				return false;
-			}
 		}
 
 		@Override
@@ -576,13 +551,13 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
                     canvas.drawCircle((float)botRight.x/2 + half.getWidth(),(float)botRight.y,5,paintPoint);
 
 
-                    double width = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY());
-                    double height = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), botRight.getX(), botRight.getY());
+                    //double width = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY());
+                    //double height = UtilPoint2D_F64.distance(topLeft.getX(), topLeft.getY(), botRight.getX(), botRight.getY());
 
                         try {
 
-                            width = Math.abs(width);
-                            height = Math.abs(height);
+                            //width = Math.abs(width);
+                            //height = Math.abs(height);
 
                             //Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, (int) width, (int) height, false);
                             Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, 90, 150, false);
