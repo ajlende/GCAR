@@ -88,12 +88,12 @@
     <orderEntry type="library" exported="" name="BoofCV-io-0.18" level="project" />
     <orderEntry type="library" exported="" name="xstream-1.4.7" level="project" />
     <orderEntry type="library" exported="" name="georegression-0.7" level="project" />
-    <orderEntry type="library" exported="" name="BoofCV-android-0.18" level="project" />
     <orderEntry type="library" exported="" name="ddogleg-0.6" level="project" />
-    <orderEntry type="library" exported="" name="BoofCV-recognition-0.18" level="project" />
-    <orderEntry type="library" exported="" name="BoofCV-ip-0.18" level="project" />
-    <orderEntry type="library" exported="" name="BoofCV-calibration-0.18" level="project" />
+    <orderEntry type="library" exported="" name="BoofCV-android-0.18" level="project" />
     <orderEntry type="library" exported="" name="core-0.26" level="project" />
+    <orderEntry type="library" exported="" name="BoofCV-recognition-0.18" level="project" />
+    <orderEntry type="library" exported="" name="BoofCV-calibration-0.18" level="project" />
+    <orderEntry type="library" exported="" name="BoofCV-ip-0.18" level="project" />
     <orderEntry type="library" exported="" name="BoofCV-sfm-0.18" level="project" />
     <orderEntry type="library" exported="" name="BoofCV-geo-0.18" level="project" />
     <orderEntry type="library" exported="" name="BoofCV-feature-0.18" level="project" />

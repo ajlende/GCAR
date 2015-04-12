@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\bww1\Documents\hackathon\wethoughtthiswasaspeeddatingapp\BoofAndroidDemo\app\src\main\assets"/></dataSet><dataSet config="debug"><source path="C:\Users\bww1\Documents\hackathon\wethoughtthiswasaspeeddatingapp\BoofAndroidDemo\app\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/assets"/></dataSet><dataSet config="debug"><source path="/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/debug/assets"/></dataSet></merger>

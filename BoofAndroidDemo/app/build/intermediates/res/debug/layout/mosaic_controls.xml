@@ -27,4 +27,4 @@
 			android:onClick="pausedPressed"
 			android:id="@+id/toggle_pause" android:layout_gravity="center"/>
 
-</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/mosaic_controls.xml -->
+</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/mosaic_controls.xml -->

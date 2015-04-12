@@ -32,4 +32,4 @@
 				android:enabled="false"
 				android:id="@+id/button_accept" android:layout_gravity="left|center_vertical"/>
 	</LinearLayout>
-</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_compute_view.xml -->
+</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_compute_view.xml -->

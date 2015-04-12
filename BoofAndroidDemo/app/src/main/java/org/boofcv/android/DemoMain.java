@@ -10,16 +10,24 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.Toast;
-import boofcv.android.BoofAndroidFiles;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import android.content.pm.ActivityInfo;
+
+import boofcv.android.BoofAndroidFiles;
 
 public class DemoMain extends Activity implements ExpandableListView.OnChildClickListener {
 
@@ -45,10 +53,19 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.main);
 
+        // When working with the camera, it's useful to stick to one orientation.
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE );
+
+        // Next, we disable the application's title bar...
+        requestWindowFeature( Window.FEATURE_NO_TITLE );
+        // ...and the notification bar. That way, we can use the full screen.
+        getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        WindowManager.LayoutParams.FLAG_FULLSCREEN );
+
         Intent intent = new Intent(this, CalibrationActivity.class);
         startActivity(intent);
 
-		/* createGroups();
+		/*createGroups();
 
 		ExpandableListView listView = (ExpandableListView) findViewById(R.id.DemoListView);
 
@@ -68,7 +85,7 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 		listView.setAdapter(expListAdapter);
 		listView.setOnChildClickListener(this);
 
-        Group g = groups.get(5);
+        /*Group g = groups.get(5);
         Class<Activity> action = g.actions.get(0);
         Intent intent = new Intent(this, action);
         startActivity(intent);*/
@@ -176,8 +193,18 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 			Camera.getCameraInfo(i, c.info);
 			Camera camera = Camera.open(i);
 			Camera.Parameters params = camera.getParameters();
+
+            /*for(int j = 0; j < params.getSupportedPreviewSizes().size(); j++) {
+                if(params.getSupportedPreviewSizes().get(j).width == 486) c.sizePreview.add(params.getSupportedPreviewSizes().get(j));
+            }
+
+            for(int j = 0; j < params.getSupportedPictureSizes().size(); j++) {
+                if(params.getSupportedPictureSizes().get(j).width == 486) c.sizePicture.add(params.getSupportedPictureSizes().get(j));
+            }*/
 			c.sizePreview.addAll(params.getSupportedPreviewSizes());
 			c.sizePicture.addAll(params.getSupportedPictureSizes());
+            //c.sizePreview.add(params.getSupportedPreviewSizes().get(1));
+            //c.sizePicture.add(params.getSupportedPictureSizes().get(1));
 			camera.release();
 		}
 	}
@@ -205,8 +232,9 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 		}
 
 		CameraSpecs camera = specs.get(preference.cameraId);
-		preference.preview = UtilVarious.closest(camera.sizePreview,320,240);
-		preference.picture = UtilVarious.closest(camera.sizePicture,640,480);
+		//preference.preview = UtilVarious.closest(camera.sizePreview,320,240);
+        preference.preview = UtilVarious.closest(camera.sizePreview,640,480);
+        preference.picture = UtilVarious.closest(camera.sizePicture,640,480);
 
 		// see if there are any intrinsic parameters to load
 		loadIntrinsic();

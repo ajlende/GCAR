@@ -3,9 +3,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			  android:orientation="horizontal"
 			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
+			  android:layout_height="match_parent"
+              android:keepScreenOn="true">
 
-	<TextView
+	<!--<TextView
 			android:layout_width="70dip"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
@@ -48,6 +49,6 @@
 			android:layout_marginLeft="10dip"
 			android:text="Help"
 			android:onClick="pressedHelp"
-			android:layout_gravity="center"/>
+			android:layout_gravity="center"/>-->
 
-</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_view.xml -->
+</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/calibration_view.xml -->

@@ -19,4 +19,4 @@
 			android:onClick="resetPressed"
 			android:id="@+id/button_reset" android:layout_gravity="center"/>
 
-</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/objecttrack_controls.xml -->
+</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/objecttrack_controls.xml -->

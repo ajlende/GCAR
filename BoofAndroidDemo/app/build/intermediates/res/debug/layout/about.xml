@@ -9,4 +9,4 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:id="@+id/text_about"/>
-</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/about.xml -->
+</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/about.xml -->
