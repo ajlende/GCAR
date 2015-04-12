@@ -22,7 +22,6 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.ddogleg.struct.FastQueue;
@@ -38,18 +37,21 @@ import boofcv.android.gui.VideoRenderProcessing;
 import boofcv.factory.calib.FactoryPlanarCalibrationTarget;
 import boofcv.struct.image.ImageFloat32;
 import boofcv.struct.image.ImageType;
-import georegression.geometry.UtilPoint2D_F64;
 import georegression.struct.point.Point2D_F64;
 import georegression.struct.point.Point2D_I32;
 
 import android.view.Display;
 import android.util.DisplayMetrics;
+
+import com.google.android.gms.wearable.MessageApi;
+import com.google.android.gms.wearable.MessageEvent;
+
 /**
  * Activity for collecting images of calibration targets. The user must first specify the type of target it is
  * searching for and click the screen to add the image.
  **/
 
-public class CalibrationActivity extends PointTrackerDisplayActivity
+public class CalibrationActivity extends PointTrackerDisplayActivity implements MessageApi.MessageListener
 {
 	public static final int TARGET_DIALOG = 10;
 
@@ -67,6 +69,9 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
 	// user has requested that the next image be processed for the target
 	boolean captureRequested = false;
+
+    //Image counter
+    int imageCounter = 0;
 
 	// user has requested that the most recent image be removed from data list
 	boolean removeRequested = false;
@@ -197,7 +202,25 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 		}
 	}
 
-	protected class MyGestureDetector extends GestureDetector.SimpleOnGestureListener
+    @Override
+    public void onMessageReceived(MessageEvent messageEvent) {
+
+        Log.d("WEAR_MESSAGE", "Test");
+
+        //Change the image
+        if(imageCounter == 0) {
+            nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.thecage);
+            imageCounter++;
+        } else if(imageCounter == 1) {
+            nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.oscarcage);
+            imageCounter++;
+        } else {
+            nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.scarycage);
+            imageCounter = 0;
+        }
+    }
+
+    protected class MyGestureDetector extends GestureDetector.SimpleOnGestureListener
 	{
 		View v;
 
@@ -563,8 +586,8 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
                             Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, 90, 150, false);
                             Matrix matrix = new Matrix();
                             //matrix.postRotate(degree-45);
-                            Log.d("Degree", "Degree: " + degree);
-                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                            //Log.d("Degree", "Degree: " + degree);
+                            //Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
 
 
 
@@ -574,8 +597,10 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
                             if(botLeft.getY() > topLeft.getY()) point = topRight;
                             else point = botLeft;
 
-                            canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2, (float) point.getY(), null);
-                            canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2 + half.getWidth(), (float) point.getY(), null);
+                            //canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2, (float) point.getY(), null);
+                            //canvas.drawBitmap(rotatedBitmap, (float) point.getX()/2 + half.getWidth(), (float) point.getY(), null);
+                            canvas.drawBitmap(scaledBitmap, (float) point.getX()/2, (float) point.getY(), null);
+                            canvas.drawBitmap(scaledBitmap, (float) point.getX()/2 + half.getWidth(), (float) point.getY(), null);
 
                             /*
 
@@ -610,4 +635,5 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
             else return true;
         }
 	}
+
 }

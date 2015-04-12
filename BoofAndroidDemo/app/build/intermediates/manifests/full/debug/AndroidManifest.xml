@@ -5,8 +5,8 @@
     android:versionName="1.5" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="21"
+        android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -39,46 +39,6 @@
         <activity
             android:name="org.boofcv.android.DemoVideoDisplayActivity"
             android:screenOrientation="landscape" />
-        <activity android:name="org.boofcv.android.PreferenceActivity" />
-        <activity
-            android:name="org.boofcv.android.BlurDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.EnhanceDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.GradientDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.BinaryDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.PointDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.ScalePointDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.LineDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.KltDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.StabilizeDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.MosaicDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.AssociationActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.DdaTrackerDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.CombinedTrackerDisplayActivity"
-            android:screenOrientation="landscape" />
         <activity
             android:name="org.boofcv.android.CalibrationActivity"
             android:screenOrientation="landscape" />
@@ -86,43 +46,11 @@
             android:name="org.boofcv.android.CalibrationComputeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name="org.boofcv.android.CameraInformationActivity" />
-        <activity
-            android:name="org.boofcv.android.DisparityActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name="org.boofcv.android.AboutActivity" />
         <activity android:name="org.boofcv.android.CalibrationHelpActivity" />
-        <activity
-            android:name="org.boofcv.android.ShapeFitDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.ImageTransformActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.ObjectTrackerActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.ShapeFittingActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.CannyEdgeActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.UndistortDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.SegmentationDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.ThresholdDisplayActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="org.boofcv.android.FiducialSquareBinaryActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name="org.boofcv.android.FiducialSquareBinaryHelpActivity" />
-        <activity
-            android:name="org.boofcv.android.FiducialSquareImageActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name="org.boofcv.android.FiducialSquareImageHelpActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
