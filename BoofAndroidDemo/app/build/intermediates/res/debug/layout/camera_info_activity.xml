@@ -11,4 +11,4 @@
 			android:editable="false"
 			android:scrollbars = "vertical"
 			android:id="@+id/CameraInfoText"/>
-</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/camera_info_activity.xml -->
+</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/camera_info_activity.xml -->

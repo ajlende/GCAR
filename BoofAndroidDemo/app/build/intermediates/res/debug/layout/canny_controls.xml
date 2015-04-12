@@ -23,4 +23,4 @@
 			android:text="Colorized"
 			android:checked="true"
 			android:id="@+id/check_colorize" android:layout_gravity="center"/>
-</LinearLayout><!-- From: file:/home/nmont/Documents/Git_Repos/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/canny_controls.xml -->
+</LinearLayout><!-- From: file:/C:/Users/bww1/Documents/hackathon/wethoughtthiswasaspeeddatingapp/BoofAndroidDemo/app/src/main/res/layout/canny_controls.xml -->

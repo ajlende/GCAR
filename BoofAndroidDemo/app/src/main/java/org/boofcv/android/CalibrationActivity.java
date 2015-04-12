@@ -421,7 +421,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 
                     for (int i = 0; i < 24; i++) {
                         // If equal points, continue
-                        Point2D_F64 point = pointsGui.get(i);
+                        //Point2D_F64 point = pointsGui.get(i);
 
                         if(compare(pointsGui.get(i), C1) || compare(pointsGui.get(i), C2) || compare(pointsGui.get(i), C3) || compare(pointsGui.get(i), C4)) continue;
 

@@ -43,9 +43,12 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		//setContentView(R.layout.main);
 
-		createGroups();
+        Intent intent = new Intent(this, CalibrationActivity.class);
+        startActivity(intent);
+
+		/* createGroups();
 
 		ExpandableListView listView = (ExpandableListView) findViewById(R.id.DemoListView);
 
@@ -64,6 +67,11 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 
 		listView.setAdapter(expListAdapter);
 		listView.setOnChildClickListener(this);
+
+        Group g = groups.get(5);
+        Class<Activity> action = g.actions.get(0);
+        Intent intent = new Intent(this, action);
+        startActivity(intent);*/
 	}
 
 	@Override
@@ -272,7 +280,7 @@ public class DemoMain extends Activity implements ExpandableListView.OnChildClic
 
 		Group g = groups.get(groupPosition);
 
-		Class<Activity> action = g.actions.get(childPosition);
+        Class<Activity> action = g.actions.get(childPosition);
 		if( action != null ) {
 			Intent intent = new Intent(this, action);
 			startActivity(intent);
