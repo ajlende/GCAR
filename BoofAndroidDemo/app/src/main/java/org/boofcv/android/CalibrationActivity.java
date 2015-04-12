@@ -8,7 +8,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color; import android.graphics.Paint; import android.os.Bundle; import android.view.GestureDetector; import android.view.LayoutInflater;
+import android.graphics.Color; import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.GestureDetector; import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
@@ -17,14 +21,16 @@ import boofcv.alg.feature.detect.chess.DetectChessCalibrationPoints;
 import boofcv.alg.feature.detect.grid.DetectSquareCalibrationPoints;
 import boofcv.alg.feature.detect.quadblob.QuadBlob;
 import boofcv.android.ConvertBitmap;
-import boofcv.android.VisualizeImageData;
 import boofcv.android.gui.VideoRenderProcessing;
 import boofcv.factory.calib.FactoryPlanarCalibrationTarget;
 import boofcv.struct.image.ImageFloat32;
 import boofcv.struct.image.ImageType;
 import georegression.struct.point.Point2D_F64;
 import georegression.struct.point.Point2D_I32;
+import georegression.geometry.*;
 import org.ddogleg.struct.FastQueue;
+import android.graphics.Matrix;
+import android.graphics.RectF;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +110,7 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				return true;
 			}});
 
-        nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.dog);
+        nickCage = BitmapFactory.decodeResource(getResources(), R.drawable.thecage);
         newCage = Bitmap.createScaledBitmap(nickCage,100,100,false);
 		//showDialog(TARGET_DIALOG);
 	}
@@ -397,29 +403,219 @@ public class CalibrationActivity extends PointTrackerDisplayActivity
 				processRequested = false;
 				handleProcessRequest();
 			} else {
-				canvas.drawBitmap(bitmap,0,0,null);
-
-				// draw shapes for debugging purposes
-				/*for( List<Point2D_I32> l : debugQuads ) {
-					for( int i = 1; i < l.size(); i++ ) {
-						Point2D_I32 c0 = l.get(i-1);
-						Point2D_I32 c1 = l.get(i);
-						canvas.drawLine(c0.x,c0.y,c1.x,c1.y,paintFailed);
-					}
-					Point2D_I32 c0 = l.get(0);
-					Point2D_I32 c1 = l.get(l.size()-1);
-					canvas.drawLine(c0.x,c0.y,c1.x,c1.y,paintFailed);
-				}*/
+                //Bitmap half = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/2, bitmap.getHeight(), true);
+                canvas.drawBitmap(bitmap,0,0,null);
 
 				// draw detected calibration points
 				for( int i = 0; i < pointsGui.size(); i++ ) {
 					Point2D_F64 p = pointsGui.get(i);
-					canvas.drawCircle((float)p.x,(float)p.y,3,paintPoint);
 				}
 
-                if (pointsGui.size() > 0) canvas.drawBitmap(newCage,(float) pointsGui.get(0).x ,(float) pointsGui.get(0).y, null);
+                if (pointsGui.size() > 0) {
 
+                    // Points first run through detect as 'corners'
+                    Point2D_F64 C1 = pointsGui.get(0);
+                    Point2D_F64 C2 = pointsGui.get(0);
+                    Point2D_F64 C3 = pointsGui.get(0);
+                    Point2D_F64 C4 = pointsGui.get(0);
+
+                    for (int i = 0; i < 24; i++) {
+                        // If equal points, continue
+                        Point2D_F64 point = pointsGui.get(i);
+
+                        if(compare(pointsGui.get(i), C1) || compare(pointsGui.get(i), C2) || compare(pointsGui.get(i), C3) || compare(pointsGui.get(i), C4)) continue;
+
+                        if ((pointsGui.get(i).getX() <= C1.getX()) && (pointsGui.get(i).getY() < C1.getY())) {
+                            C1 = pointsGui.get(i);
+                            continue;
+                        }
+
+                        if ((pointsGui.get(i).getX() < C3.getX()) && (pointsGui.get(i).getY() > C3.getY())) {
+                            C3 = pointsGui.get(i);
+                            continue;
+                        }
+
+                        if ((pointsGui.get(i).getX() > C2.getX()) && (pointsGui.get(i).getY() < C2.getY())) {
+                            C2 = pointsGui.get(i);
+                            continue;
+                        }
+
+                        if ((pointsGui.get(i).getX() > C4.getX()) && (pointsGui.get(i).getY() > C4.getY())) {
+                            C4 = pointsGui.get(i);
+                            continue;
+                        }
+                    }
+
+                    ArrayList<Point2D_F64> list = new ArrayList<Point2D_F64>();
+                    list.add(C1);
+                    list.add(C2);
+                    list.add(C3);
+                    list.add(C4);
+
+                    Point2D_F64 topLeft = pointsGui.get(0);
+                    Point2D_F64 topRight = pointsGui.get(0);
+                    Point2D_F64 botLeft = pointsGui.get(0);
+                    Point2D_F64 botRight = pointsGui.get(0);
+
+                    Point2D_F64 top1 = pointsGui.get(0);
+                    Point2D_F64 top2 = pointsGui.get(0);
+                    Point2D_F64 bot1 = pointsGui.get(0);
+                    Point2D_F64 bot2 = pointsGui.get(0);
+
+                    // Find top points
+                    for(int i  = 0; i < 4; i++) {
+                            if(list.get(i).getY() < top2.getY()) {
+                                if(list.get(i).getY() < top1.getY()) {
+                                    top2 = top1;
+                                    top1 = list.get(i);
+                                }
+                                else top2 = list.get(i);
+                            }
+                    }
+
+                    // Decide which top point is right and which is left
+                    if(top1.getX() < top2.getX()) {
+                        topLeft = top1;
+                        topRight = top2;
+                    }
+
+                    else if(top1.getX() > top2.getX()) {
+                        topLeft = top2;
+                        topRight = top1;
+                    }
+                    
+                    // If equal, add 1 to top2.x, let it be the right
+                    else {
+                        top2.x ++;
+                        topRight = top2;
+                        topLeft = top1;
+                    }
+
+                    
+                    // Find bottom points
+                    for(int i  = 0; i < 4; i++) {
+                        if(list.get(i).getY() > bot2.getY()) {
+                            if(list.get(i).getY() > bot1.getY()) {
+                                bot2 = bot1;
+                                bot1 = list.get(i);
+                            }
+                            else bot2 = list.get(i);
+                        }
+                    }
+
+                    // Decide which bottom point is right and which is left
+                    if(bot1.getX() < bot2.getX()) {
+                        botLeft = bot1;
+                        botRight = bot2;
+                    }
+
+                    else if(bot1.getX() > bot2.getX()) {
+                        botLeft = bot2;
+                        botRight = bot1;
+                    }
+
+                    // If equal, add 1 to bot2.x, let it be the right
+                    else {
+                        bot2.x ++;
+                        botRight = bot2;
+                        botLeft = bot1;
+                    }
+
+                    // Find most Right, Top, Left, and Bottom Axes
+                    float mostRight = (float) Math.max(topRight.getX(), botRight.getX());
+                    float mostTop = (float) Math.min(topRight.getY(), topLeft.getY());
+                    float mostLeft = (float) Math.min(topLeft.getX(), botLeft.getX());
+                    float mostBot = (float) Math.max(botLeft.getY(), botRight.getY());
+
+                    RectF rectangle = new RectF(mostBot, mostLeft, mostRight, mostTop);
+
+                    // Re-analyse points, keeping all points that meet/go beyond this
+                    ArrayList<Point2D_F64> rightAxis = new ArrayList<Point2D_F64>();
+                    ArrayList<Point2D_F64> topAxis = new ArrayList<Point2D_F64>();
+                    ArrayList<Point2D_F64> leftAxis = new ArrayList<Point2D_F64>();
+                    ArrayList<Point2D_F64> botAxis = new ArrayList<Point2D_F64>();
+
+                    for(int i = 0; i < 24; i ++) {
+                        if(pointsGui.get(i).getX() >= mostRight) rightAxis.add(pointsGui.get(i));
+                        if(pointsGui.get(i).getX() <= mostLeft) leftAxis.add(pointsGui.get(i));
+                        if(pointsGui.get(i).getY() >= mostBot) botAxis.add(pointsGui.get(i));
+                        if(pointsGui.get(i).getY() <= mostTop) topAxis.add(pointsGui.get(i));
+                    }
+
+                     // Go through Right axis, get 'Top Right'
+                     for(int i = 0; i < rightAxis.size(); i++) {
+                         if(rightAxis.get(i).getX() >= topRight.getX()) topLeft = rightAxis.get(i);
+                     }
+
+                     // Go through Bottom Axis, get 'Bottom Right'
+                     for(int i = 0; i < botAxis.size(); i++) {
+                         if(botAxis.get(i).getY() >= botRight.getY()) botRight = botAxis.get(i);
+                     }
+
+                     // Go through Left Axis, get 'Bottom Left'
+                     for(int i = 0; i < leftAxis.size(); i++) {
+                         if(leftAxis.get(i).getX() <= botLeft.getX()) botLeft = leftAxis.get(i);
+                     }
+
+                     // Go through Top Axis, get 'Top Right'
+                     for(int i = 0; i < topAxis.size(); i++) {
+                         if(topAxis.get(i).getX() <= topRight.getX()) topRight = topAxis.get(i);
+                     }
+
+                    paintPoint.setColor(Color.RED);
+                    paintPoint.setStyle(Paint.Style.FILL);
+                    canvas.drawCircle((float)topLeft.x,(float)topLeft.y,3,paintPoint);
+
+                    paintPoint.setColor(Color.BLUE);
+                    paintPoint.setStyle(Paint.Style.FILL);
+                    canvas.drawCircle((float)topRight.x,(float)topRight.y,3,paintPoint);
+
+                    paintPoint.setColor(Color.GREEN);
+                    paintPoint.setStyle(Paint.Style.FILL);
+                    canvas.drawCircle((float)botLeft.x,(float)botLeft.y,3,paintPoint);
+
+                    paintPoint.setColor(Color.YELLOW);
+                    paintPoint.setStyle(Paint.Style.FILL);
+                    canvas.drawCircle((float)botRight.x,(float)botRight.y,3,paintPoint);
+
+
+                    double width = UtilPoint2D_F64.distance(botLeft.x, botLeft.y, botRight.x, botRight.y);
+                    double height = UtilPoint2D_F64.distance(botRight.x, botRight.y, topRight.x, topRight.y);
+
+                        try {
+                            width = Math.abs(width);
+                            height = Math.abs(height);
+
+                            Bitmap scaledBitmap = Bitmap.createScaledBitmap(nickCage, (int) width, (int) height, true);
+                            Matrix matrix = new Matrix();
+                            matrix.postRotate(180);
+
+                            Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+
+                            // Draw Cage
+                            //canvas.drawBitmap(rotatedBitmap, (float) topLeft.x, (float) topLeft.y, null);
+                            //canvas.drawRect(mostLeft, mostTop, mostRight, mostBot, paintPoint);
+                            //canvas.drawBitmap(rotatedBitmap, null, rectangle, null);
+                        }
+
+                        // Debugging
+                        catch (Exception e) {
+//                            Log.e("Boofcv", "Width: " + width + " & Height: " + height);
+//                            Log.e("Boofcv", "Top Left: (" + topLeft.x + ", " + topLeft.y);
+//                            Log.e("Boofcv", "Top Right: (" + topRight.x + ", " + topRight.y);
+//                            Log.e("Boofcv", "Bottom Left: (" + botLeft.x + ", " + botLeft.y);
+//                            Log.e("Boofcv", "Bottom Right: (" + botRight.x + ", " + botRight.y + "\n\n");
+                        }
+
+                }
 			}
 		}
+
+        private boolean compare(Point2D_F64 p1, Point2D_F64 p2) {
+            if(p1.getX() != p2.getX()) return false;
+            else if(p1.getY() != p2.getY()) return false;
+
+            else return true;
+        }
 	}
 }

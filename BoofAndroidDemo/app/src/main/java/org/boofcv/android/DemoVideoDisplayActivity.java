@@ -15,7 +15,6 @@ public class DemoVideoDisplayActivity extends VideoDisplayActivity {
 
 	public DemoVideoDisplayActivity() {
 	}
-
 	public DemoVideoDisplayActivity(boolean hidePreview) {
 		super(hidePreview);
 	}
